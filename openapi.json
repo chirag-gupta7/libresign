@@ -4798,6 +4798,7 @@
                                     "policy": {
                                         "type": "object",
                                         "nullable": true,
+                                        "default": null,
                                         "description": "Authorized request-level policy overrides",
                                         "additionalProperties": {
                                             "type": "object"
@@ -5180,6 +5181,34 @@
                                                 "data": {
                                                     "$ref": "#/components/schemas/ActionErrorResponse"
                                                 }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Current user is not logged in",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "type": "object",
+                                    "required": [
+                                        "ocs"
+                                    ],
+                                    "properties": {
+                                        "ocs": {
+                                            "type": "object",
+                                            "required": [
+                                                "meta",
+                                                "data"
+                                            ],
+                                            "properties": {
+                                                "meta": {
+                                                    "$ref": "#/components/schemas/OCSMeta"
+                                                },
+                                                "data": {}
                                             }
                                         }
                                     }
